@@ -15,4 +15,9 @@ public class PCFactory {
                throw new RuntimeException("invlid selection");
         }
     }
+
+    public void main()
+    {
+        System.out.println("main");
+    }
 }
