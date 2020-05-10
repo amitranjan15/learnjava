@@ -16,19 +16,20 @@ public class Laptop implements Computer {
         this.graphicEnable = graphicEnable;
         this.bluetoothEnabled = bluetoothEnabled;
     }
-    String hdd() {
-      return  this.hdd;
+    
+    public String hdd() {
+        return this.hdd;
     }
 
-    String cpu() {
+    public String cpu() {
         return cup;
     }
 
-    String graphicEnable() {
+    public String graphicEnable() {
         return graphicEnable;
     }
 
-    String bluetoothEnabled() {
+    public String bluetoothEnabled() {
         return bluetoothEnabled;
     }
 
@@ -36,8 +37,5 @@ public class Laptop implements Computer {
     public String toString() {
         return "Pc [bluetoothEnabled=" + bluetoothEnabled + ", cpu=" + cpu + ", graphicEnable=" + graphicEnable
                 + ", hdd=" + hdd + ", ram=" + ram + "]";
-    }
-
-    
-    
+    }    
 }
