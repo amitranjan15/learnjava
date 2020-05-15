@@ -5,7 +5,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class CommonField {
 
-    private boolean active;
+    private boolean active=true;
     private boolean deleted;
 
     public boolean isActive() {
