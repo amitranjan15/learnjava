@@ -2,10 +2,9 @@ package com.demo.entityes;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Users extends CommonField{
@@ -14,6 +13,13 @@ public class Users extends CommonField{
 	private int id;
 	private String name;
 	private int age;
+
+	@ElementCollection
+	@CollectionTable(name = "users_post", joinColumns = @JoinColumn(name = "uid"))
+	private Set<Post> posts=new HashSet<>();
+
+	@Embedded
+	private Address address;
 
 	public int getId() {
 		return id;
@@ -37,5 +43,21 @@ public class Users extends CommonField{
 			throw new RuntimeException("Age Should be gt 18");
 		}
 		this.age = age;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public Set<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(Set<Post> posts) {
+		this.posts = posts;
 	}
 }
